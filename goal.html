@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>防災～生きねば～</title>
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0; background-color: #F1E433; }
+      .map {
+        position: absolute;
+        width: 100%;
+        padding-top: 105px;
+        text-align: center;
+      }
+      #tarouhanako {
+        display: none;
+      }
+      #map-canvas {
+        width: 800px;
+        height: 600px;
+        margin: auto;
+      }
+      #kokubanWrap {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+      }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('audio').each(function () {
+          this.volume = 0.1;
+        });
+        $('#owari1').click(function () {
+          $(this).hide();
+          $('#tarouhanako').show();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="kokubanWrap"><img id="kokuban" src="img/kokubannnozoki.png"></div>
+    <div class="map">
+      <img id="owari1" src="img/owari1.png" width="800" height="600">
+      <img id="tarouhanako" src="img/tarouhanako.png" width="800" height="600">
+    </div>
+    <audio src="sound/announce.mp3" autoplay></audio>
+  </body>
+</html>

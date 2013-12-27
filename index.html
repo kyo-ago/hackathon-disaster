@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>防災～生きねば～</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style type="text/css">
+      body { text-align: center; background-color: #F1E433; }
+      #tarou {
+        left: 16%;
+      }
+      #yuko {
+        left: 53%;
+      }
+      #buttons {
+        width: 1024px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: -350px;
+      }
+    </style>
+    <script>
+      $(function () {
+        $('a').each(function () {
+          if (!$(this).attr('href').match(/map.html/)) {
+            return;
+          }
+          if ($(this).attr('href').match(/#/)) {
+            return;
+          }
+          $(this).attr('href', $(this).attr('href') + location.hash);
+        });
+        $('audio').each(function () {
+          this.volume = 0.3;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <img src="img/start_haikei.png">
+    <div id="buttons">
+      <a href="map.html#https://maps.google.com/maps/ms?authuser=0&vps=2&ie=UTF8&msa=0&output=kml&msid=202958072521216836182.0004ee161960470ed77f4"><img class="button" id="tarou" src="img/start_taroubotan.png"></a>
+      <a href="map.html#https://maps.google.co.jp/maps/ms?msid=209061496092093083476.0004ee2a3fcd931e9992b&msa=0&ll=35.619122,140.076478&spn=0.006864,0.01207"><img class="button" id="yuko" src="img/start_yukobotan.png"></a>
+    </div>
+    <audio src="sound/start.mp3" autoplay></audio>
+  </body>
+</html>
